@@ -1,0 +1,268 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5721016800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MultiDealsSteps.InitializeBedore()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Add new Deal scenario with multiple information",
+        "description": "",
+        "id": "add-new-deal;add-new-deal-scenario-with-multiple-information",
+        "after": [
+          {
+            "result": {
+              "duration": 3020242500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MultiDealsSteps.closeBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3319483100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Julian is on Application Home Page",
+            "match": {
+              "location": "MultiDealsSteps.Julian_is_on_Application_Home_Page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16923700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Application Page Tittle is FREE CRM",
+            "match": {
+              "location": "MultiDealsSteps.application_Page_Tittle_is_FREE_CRM()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1355497400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Julian press the button login",
+            "match": {
+              "location": "MultiDealsSteps.Julian_press_the_button_login()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20303965100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Julian enters username and password",
+            "match": {
+              "location": "MultiDealsSteps.Julian_enters_username_and_password(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "username",
+                  "password"
+                ]
+              },
+              {
+                "cells": [
+                  "yulian252003@yahoo.es",
+                  "CarePalo27"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2077802900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Julian click on Login button.",
+            "match": {
+              "location": "MultiDealsSteps.Julian_click_on_Login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5174300,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Julian navigate to user Profile page",
+            "match": {
+              "location": "MultiDealsSteps.Julian_navigate_to_user_Profile_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5171368500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Go to Deals",
+            "match": {
+              "location": "MultiDealsSteps.go_to_Deals()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 180364300,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "click on button Plus to add New Deal Form",
+            "match": {
+              "location": "MultiDealsSteps.click_on_button_Plus_to_add_New_Deal_Form()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 101986140600,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Julian enters deal data",
+            "match": {
+              "location": "MultiDealsSteps.Julian_enters_deal_data(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Title",
+                  "Amount",
+                  "Probability",
+                  "Commision",
+                  "Description",
+                  "Next Step"
+                ]
+              },
+              {
+                "cells": [
+                  "New Deal",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed0"
+                ]
+              },
+              {
+                "cells": [
+                  "Bed",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed1"
+                ]
+              },
+              {
+                "cells": [
+                  "Sofa",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed2"
+                ]
+              },
+              {
+                "cells": [
+                  "Tv",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed3"
+                ]
+              },
+              {
+                "cells": [
+                  "Stove",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed4"
+                ]
+              },
+              {
+                "cells": [
+                  "Fridge",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed5"
+                ]
+              },
+              {
+                "cells": [
+                  "Oven",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed6"
+                ]
+              },
+              {
+                "cells": [
+                  "Pan",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed7"
+                ]
+              },
+              {
+                "cells": [
+                  "Computer",
+                  "1000",
+                  "20",
+                  "3",
+                  "This is new Deal",
+                  "To Be Discussed8"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Add New Deal",
+    "description": "",
+    "id": "add-new-deal",
+    "keyword": "Feature",
+    "uri": "src/main/java/Features/MultiDeals.feature"
+  }
+]
