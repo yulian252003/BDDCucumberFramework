@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import static org.testng.Assert.assertTrue;
 
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -12,13 +13,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import cucumber.api.DataTable;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.*;
+//import cucumber.api.DataTable;
+//import cucumber.api.java.After;
+//import io.cucumber.api.java.Before;
+import io.cucumber.java.en.*;
+//import io.cucumber.api.java.en.And;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
+//import cucumber.api.java.en.When;
+
 
 public class MultiDealsSteps
 {
@@ -27,7 +32,8 @@ public class MultiDealsSteps
 	@Before
 	public void InitializeBedore()
 	{
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\main\\java\\resources\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\main\\java\\resources\\chromedriver");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/java/resources/chromedriver");
     	driver = new ChromeDriver();
     	driver.manage().window().maximize();
 	}
@@ -67,16 +73,21 @@ public class MultiDealsSteps
     public void Julian_enters_username_and_password(DataTable credentials) throws InterruptedException
     {
     	
-    	for(Map<String, String>dataMap : credentials.asMaps(String.class, String.class))
-    	{
-    	       Thread.sleep(20000);
+    	 //List<List<String>> datainfo = credentials.asLists(String.class);
+    	 List<Map<String, String>> rows = credentials.asMaps(String.class, String.class);
+    	
+    		//for (List<String> columns : datainfo) 
+    		for (Map<String, String> columns : rows)
+    		{
+    	       Thread.sleep(50000);
     		    WebDriverWait wait = new WebDriverWait(driver,30);
     		    wait.until(ExpectedConditions.presenceOfElementLocated(By.name("email")));
-    		    driver.findElement(By.name("email")).sendKeys(dataMap.get("username"));
+    		    driver.findElement(By.name("email")).sendKeys(columns.get("username"));
+    		    
     		    
     		    wait.until(ExpectedConditions.presenceOfElementLocated(By.name("password")));
-    		    driver.findElement(By.name("password")).sendKeys(dataMap.get("password"));  	
-    	}
+    		    driver.findElement(By.name("password")).sendKeys(columns.get("password"));  	
+    		}
           
     }
     
@@ -112,14 +123,17 @@ public class MultiDealsSteps
     @Then("^Julian enters deal data$")
     public void Julian_enters_deal_data(DataTable data) throws InterruptedException  
     {
-    	for(Map<String, String>dataMap : data.asMaps(String.class, String.class))
+    	//for(Map<Object, Object> dataMap : data.asMaps(String.class, String.class))
+    	 List<Map<String, String>> rows = data.asMaps(String.class, String.class);
+    	 for (Map<String, String> columns : rows)
     	{
-    		driver.findElement(By.name("title")).sendKeys(dataMap.get("Title"));
-        	driver.findElement(By.name("amount")).sendKeys(dataMap.get("Amount"));
-        	driver.findElement(By.name("probability")).sendKeys(dataMap.get("Probability"));
-        	driver.findElement(By.name("commission")).sendKeys(dataMap.get("Commision"));
-        	driver.findElement(By.name("description")).sendKeys(dataMap.get("Description"));
-        	driver.findElement(By.name("next_step")).sendKeys(dataMap.get("Next Step"));
+    		 Thread.sleep(10000);	
+    		driver.findElement(By.name("title")).sendKeys(columns.get("Title"));
+        	driver.findElement(By.name("amount")).sendKeys(columns.get("Amount"));
+        	driver.findElement(By.name("probability")).sendKeys(columns.get("Probability"));
+        	driver.findElement(By.name("commission")).sendKeys(columns.get("Commision"));
+        	driver.findElement(By.name("description")).sendKeys(columns.get("Description"));
+        	driver.findElement(By.name("next_step")).sendKeys(columns.get("Next Step"));
         	Thread.sleep(5000);	
         	
         	driver.findElement(By.xpath("//*[@id=\"dashboard-toolbar\"]/div[2]/div/button[2]")).click(); 

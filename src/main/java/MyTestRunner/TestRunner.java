@@ -1,14 +1,16 @@
 package MyTestRunner;
 
 import org.junit.runner.RunWith;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		         features = "src\\main\\java\\Features\\MultiDeals.feature",
+		//features = "src\\main\\java\\Features\\MultiDeals.feature", windows
+		         features = "/home/julian/Documents/workspace-spring-tool-suite-4-4.16.0.RELEASE/BDDCucumberFramework/src/main/java/Features/MultiDeals.feature",
                  glue= {"StepDefinitions"},
-                 format= {"pretty","html:test-outout","json:report_json/cucumber.json", "junit:report_xml/cucumber.xml"},
+                 plugin = {"pretty", "html:target/cucumber.html"},
 		         dryRun = false,
 		         monochrome = true,
 		         strict = true
